@@ -1,0 +1,75 @@
+[package]
+name = "plugins-rs"
+links = "plugins-rs"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+all     = ["media", "pty", "scrape"]
+default = ["dep:reqwest"]
+
+capture = ["dep:xcap"]
+media   = ["dep:ffbins-rs"]
+pty     = ["dep:portable-pty"]
+scrape  = ["dep:scraper", "dep:url"]
+
+[build-dependencies]
+deno_core = "0.380.0"
+
+[dependencies]
+log = "0.4.29"
+toml = { version = "0.9.11+spec-1.1.0", features = ["serde"] }
+thiserror = "2.0.17"
+tokio = { version = "1", features = ["rt"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Core
+tar = "0.4.44"
+xz2 = "0.1.7"
+
+dirs = "6.0.0"
+walkdir = "2.5.0"
+uuid = { version = "1.4.1", features = ["v4"] }
+which = "8.0.0"
+nanoid = "0.4.0"
+ansi_term = "0.12.1"
+include_dir = "0.7.4"
+
+# DENO
+deno_ast  =  { version = "0.52.0", features = ["transpiling"] }
+deno_ops  = "0.256.0"
+deno_core = "0.380.0"
+deno_error = "=0.7.1"
+
+deno_npm = "=0.42.2"
+deno_doc = "=0.188.0"
+deno_path_util = "=0.6.4"
+deno_semver = "=0.9.1"
+
+# Screen Capture Ext
+xcap = { version = "0.8.1", optional = true }
+
+# Scrape Ext
+url = { version = "2.5.4", optional = true }
+regex = { version = "1.12.2", optional = true }
+scraper = { version = "0.25.0", optional = true }
+
+# PTY Ext
+portable-pty = { version = "0.9.0", optional = true }
+
+# Media Ext
+ffbins-rs = { path = "../../Fork/ffbins-rs", optional = true }
+
+
+
+
+
+reqwest = { version = "0.13.1", features = ["blocking","cookies","query","form","json","multipart","hickory-dns","http3","gzip","brotli"], optional = true }
+
+
+
+
+[[example]]
+name = "base"
+path = "examples/base.rs"

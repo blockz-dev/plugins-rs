@@ -1,0 +1,1 @@
+console.log("Hello via Static test1!");
