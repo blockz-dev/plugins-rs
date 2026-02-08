@@ -1677,6 +1677,7 @@ dependencies = [
 [[package]]
 name = "ffbins-rs"
 version = "0.1.0"
+source = "git+https://github.com/blockz-dev/ffbins-rs#91be4a1a0ef61856b8e0c2ccb1f1f9aa7af34f84"
 dependencies = [
  "regex",
  "reqwest",
