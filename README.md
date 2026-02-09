@@ -7,6 +7,7 @@ PluginSystem build with [deno-core](https://github.com/denoland/deno_core)
 ---
 
 **Cargo.toml**
+
 ```toml
 plugin-rs = { git = "https://github.com/blockz-dev/plugins-rs", branch = "dev" }
 ```
